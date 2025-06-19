@@ -1,0 +1,662 @@
+.bship-game {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.bship-game-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.bship-back-button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-bottom: 10px;
+}
+
+.bship-back-button:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+.bship-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 1000;
+    animation: bship-fadeIn 0.3s, bship-fadeOut 0.3s 2.7s;
+}
+
+@keyframes bship-fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bship-fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.bship-placement-phase,
+.bship-playing-phase {
+    text-align: center;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+}
+
+.bship-placement-phase h3,
+.bship-playing-phase h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.bship-placement-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.bship-ship-sidebar {
+    width: 100%;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bship-ship-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.bship-ship-item {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: calc(33.33% - 10px);
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .bship-ship-item {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 550px) {
+    .bship-ship-item {
+        width: 100%;
+    }
+}
+
+.bship-ship-item.bship-placed {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.bship-ship-item.bship-selected {
+    background-color: #2196f3;
+    color: white;
+    border: 2px solid #1976d2;
+}
+
+.bship-ship-item:hover:not(.bship-placed) {
+    background-color: #d0d0d0;
+}
+
+.bship-ship-preview {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bship-ship-cell {
+    width: 25px;
+    height: 25px;
+    background-color: #4caf50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.bship-ready-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.bship-ready-button:hover:not(:disabled) {
+    background-color: #1976d2;
+    transform: scale(1.02);
+}
+
+.bship-ready-button.bship-active {
+    background-color: #4caf50;
+}
+
+.bship-ready-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.bship-game-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 650px;
+}
+
+.bship-player-section,
+.bship-opponent-section {
+    flex: 1;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+    max-width: 100%;
+}
+
+.bship-player-section h3,
+.bship-opponent-section h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.bship-grid-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-width: 504px;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+}
+
+.bship-column-labels {
+    position: absolute;
+    top: 0;
+    left: 42px;
+    display: flex;
+    width: calc(100% - 42px);
+}
+
+.bship-row-labels {
+    position: absolute;
+    left: 0;
+    top: 42px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 42px);
+}
+
+.bship-label {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    background-color: #f0f8ff;
+    flex: 1;
+}
+
+.bship-game-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 0;
+    background-color: #ccc;
+    width: calc(100% - 42px);
+    height: auto;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 42px;
+    left: 42px;
+    border: 1px solid #999;
+}
+
+.bship-cell {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    background-color: #e8eaf6;
+    border: 1px solid #999;
+    transition: all 0.3s;
+}
+
+.bship-cell-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.bship-cell:hover:not(.bship-hit):not(.bship-miss):not(.bship-sunk):not(.bship-ship) {
+    background-color: #bbdefb;
+    cursor: pointer;
+    transform: scale(0.97);
+}
+
+.bship-cell.bship-ship {
+    background-color: #4caf50;
+    color: white;
+}
+
+.bship-cell.bship-hit {
+    background-color: #ff4444;
+    color: white;
+    animation: bship-pulse 1s;
+}
+
+.bship-cell.bship-miss {
+    background-color: #2196f3;
+    color: white;
+}
+
+.bship-cell.bship-sunk {
+    background-color: #333;
+    color: white;
+    animation: bship-sink 0.5s;
+}
+
+.bship-cell.bship-pending {
+    background-color: #fef9c3;
+    color: white;
+}
+
+.bship-cell.bship-selected-cell {
+    background-color: rgba(33, 150, 243, 0.5);
+    border: 2px solid #2196f3;
+}
+
+.bship-icon {
+    font-size: 28px;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1 !important;
+    z-index: 10;
+}
+
+.bship-icon-hit {
+    color: #dc2626;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.bship-icon-miss {
+    color: #3b82f6;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.bship-icon-sunk {
+    color: #f59e0b;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.bship-icon-pending {
+    color: #6b7280;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.bship-shot-history {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bship-shot-history h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.bship-shot-list {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.bship-shot-item {
+    display: grid;
+    grid-template-columns: 50px 100px 100px 100px;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.875rem;
+    color: #374151;
+}
+
+.bship-shot-item:last-child {
+    border-bottom: none;
+}
+
+.bship-player-shot {
+    background-color: #e0f2fe;
+}
+
+.bship-opponent-shot {
+    background-color: #fee2e2;
+}
+
+.bship-shot-result {
+    font-weight: 500;
+}
+
+.bship-shot-result.bship-hit {
+    color: #dc2626;
+}
+
+.bship-shot-result.bship-miss {
+    color: #3b82f6;
+}
+
+.bship-shot-result.bship-sunk {
+    color: #f59e0b;
+}
+
+@keyframes bship-pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bship-sink {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(3px);
+    }
+}
+
+.bship-game-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.bship-time-info {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+.bship-turn-info {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.bship-your-turn {
+    color: #4caf50;
+    animation: bship-blink 1s infinite;
+}
+
+.bship-opponent-turn {
+    color: #f44336;
+}
+
+@keyframes bship-blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.bship-game-over {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bship-game-over h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.bship-game-over h3.bship-win {
+    color: #4caf50;
+}
+
+.bship-game-over h3.bship-lose {
+    color: #ff4444;
+}
+
+.bship-game-over p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.bship-play-again-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.bship-play-again-button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+.bship-opponent-status {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.bship-opponent-placing,
+.bship-opponent-ready {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bship-opponent-placing {
+    color: #ff9800;
+    background-color: rgba(255, 152, 0, 0.1);
+}
+
+.bship-opponent-ready {
+    color: #4caf50;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+@media (max-width: 1100px) {
+    .bship-game-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-left: 0;
+    }
+
+    .bship-player-section,
+    .bship-opponent-section {
+        width: 100%;
+        max-width: 504px;
+    }
+}
+
+@media (max-width: 900px) {
+    .bship-placement-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bship-ship-sidebar {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 20px;
+    }
+
+    .bship-game-container {
+        margin: 0 auto;
+        margin-left: -40px;
+    }
+}
+
+@media (max-width: 550px) {
+    .bship-grid-container {
+        max-width: 370px;
+    }
+
+    .bship-label {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .bship-column-labels {
+        left: 30px;
+        width: calc(100% - 30px);
+    }
+
+    .bship-row-labels {
+        top: 30px;
+        height: calc(100% - 30px);
+    }
+
+    .bship-game-grid {
+        width: calc(100% - 30px);
+        left: 30px;
+        top: 30px;
+    }
+
+    .bship-cell-content {
+        font-size: 0.8rem;
+    }
+
+    .bship-game-container {
+        margin: 0 auto;
+        margin-left: -40px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .bship-grid-container {
+        max-width: 300px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .bship-game-container {
+        max-width: 300px;
+        margin-left: 0;
+    }
+
+    .bship-label {
+        width: 25px;
+        height: 25px;
+        font-size: 0.7rem;
+    }
+
+    .bship-column-labels {
+        left: 25px;
+        width: calc(100% - 25px);
+    }
+
+    .bship-row-labels {
+        top: 25px;
+        height: calc(100% - 25px);
+    }
+
+    .bship-game-grid {
+        width: calc(100% - 25px);
+        left: 25px;
+        top: 25px;
+    }
+}

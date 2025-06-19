@@ -1,0 +1,532 @@
+.trailquiz-all {
+  display: flex;
+  flex-direction: row;
+  margin: 80px auto 0 auto;
+  max-width: 1600px;
+  width: 100%;
+}
+
+.trailquiz-container {
+  max-width: 1200px;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  width: 70%;
+}
+
+.trailquiz-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.trailquiz-back-button {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #f0f2f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 15px;
+  transition: background-color 0.2s;
+}
+
+.trailquiz-back-button:hover {
+  background-color: #e4e6eb;
+}
+
+.trailquiz-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+.trailquiz-content {
+  display: flex;
+  gap: 20px;
+}
+
+.trailquiz-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trailquiz-test-section {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.trailquiz-test-section h1 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.trailquiz-questions-container {
+  margin-top: 20px;
+}
+
+.trailquiz-questions {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.trailquiz-section-title {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e4e6eb;
+}
+
+.trailquiz-question-card {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.trailquiz-question-title {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.trailquiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.trailquiz-option {
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trailquiz-option.trailquiz-selected {
+  border-color: #3498db;
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+.trailquiz-option.trailquiz-correct {
+  border-color: #2ecc71;
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.trailquiz-option.trailquiz-incorrect {
+  border-color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.trailquiz-option-label {
+  font-weight: 600;
+  margin-right: 8px;
+  min-width: 20px;
+}
+
+.trailquiz-option-text {
+  flex: 1;
+}
+
+.trailquiz-status-icon {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.trailquiz-status-message {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.trailquiz-status-empty {
+  background-color: #f1f1f1;
+  color: #666;
+}
+
+.trailquiz-status-correct {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #27ae60;
+}
+
+.trailquiz-status-incorrect {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+}
+
+.trailquiz-explanation {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #f1f8e9;
+  border-radius: 4px;
+  border-left: 3px solid #8bc34a;
+}
+
+.trailquiz-explanation h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #558b2f;
+}
+
+.trailquiz-explanation p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.trailquiz-stats-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.trailquiz-stats-box h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e4e6eb;
+}
+
+.trailquiz-stats-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trailquiz-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trailquiz-correct {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.trailquiz-incorrect {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.trailquiz-side-panel {
+  margin-top: 20px;
+  padding-right: 20px;
+}
+
+.trailquiz-chat-box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  max-width: 400px;
+  position: fixed;
+}
+
+.trailquiz-chat-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e4e6eb;
+  display: flex;
+  align-items: center;
+}
+
+.trailquiz-chat-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.trailquiz-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trailquiz-message {
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.trailquiz-user-message {
+  align-self: flex-end;
+  background-color: #f3cc91;
+  border-bottom-right-radius: 2px;
+}
+
+.trailquiz-ai-message {
+  align-self: flex-start;
+  background-color: #f5f5f5;
+  border-bottom-left-radius: 2px;
+}
+
+.trailquiz-sender {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.trailquiz-chat-input {
+  display: flex;
+  padding: 12px 16px;
+  border-top: 1px solid #e4e6eb;
+}
+
+.trailquiz-chat-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.trailquiz-chat-input input:disabled {
+  background-color: #cccccc;
+  color: #888888;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.trailquiz-chat-input button {
+  background-color: #ff9500;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.trailquiz-chat-input button:disabled {
+  background-color: #cccccc;
+  color: #888888;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.trailquiz-chat-input button:hover:not(:disabled) {
+  background-color: #d87e00;
+}
+
+.trailquiz-loading-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #555;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.trailquiz-loading-message::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ddd;
+  border-top-color: #f7d646;
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.trailquiz-error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #e74c3c;
+  font-size: 18px;
+  text-align: center;
+}
+
+.trailquiz-score-summary {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.trailquiz-score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.trailquiz-score-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.trailquiz-score-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.trailquiz-score-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  margin-left: 20px;
+}
+
+.trailquiz-score-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.trailquiz-correct-count {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.trailquiz-incorrect-count {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .trailquiz-all {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trailquiz-main-content {
+    flex-direction: row;
+  }
+
+  .trailquiz-test-section {
+    flex: 1;
+  }
+
+  .trailquiz-side-panel {
+    width: 350px;
+    margin-top: 0;
+  }
+
+  .trailquiz-question-card {
+    padding: 20px;
+  }
+
+  .trailquiz-option {
+    padding: 12px 16px;
+  }
+
+  .trailquiz-option-label {
+    min-width: 24px;
+  }
+
+  .trailquiz-status-message {
+    padding: 10px 14px;
+  }
+
+  .trailquiz-content {
+    flex-direction: column;
+  }
+
+  .trailquiz-side-panel {
+    width: 100%;
+  }
+
+  .trailquiz-score-summary {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .trailquiz-score-details {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .trailquiz-chat-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width: 95%;
+    max-width: 720px;
+    position: relative;
+  }
+
+  .trailquiz-container {
+    max-width: 1200px;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    width: 95%;
+  }
+}
+
+.trailquiz-fullpage-loading {
+  margin: auto;
+}
+
+.trailquiz-loading-text {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  margin: 0px -16px;
+}
+
+.trailquiz-hamster-loading {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}

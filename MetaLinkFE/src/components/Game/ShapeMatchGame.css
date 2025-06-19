@@ -1,0 +1,397 @@
+.shape-match-game {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.back-button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-bottom: 10px;
+}
+
+.back-button:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+.shape-start {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.shape-start p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.difficulty-select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.start-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.start-button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+.shape-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.shape-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.shape-stats p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.stop-button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.stop-button:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+.shape-multiplayer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.shape-player-section,
+.shape-opponent-section {
+    flex: 1;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shape-player-section h3,
+.shape-opponent-section h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.shape-grid {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+}
+
+.shape-grid.grid-2x2 {
+    grid-template-columns: repeat(2, 80px);
+}
+
+.shape-grid.grid-3x2 {
+    grid-template-columns: repeat(2, 80px);
+}
+
+.shape-grid.grid-4x4 {
+    grid-template-columns: repeat(4, 80px);
+}
+
+.shape-grid.grid-5x4 {
+    grid-template-columns: repeat(4, 80px);
+}
+
+.shape-grid.grid-6x6 {
+    grid-template-columns: repeat(6, 80px);
+}
+
+.shape-card {
+    width: 80px;
+    height: 80px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.shape-card.opponent-grid {
+    cursor: default;
+}
+
+.shape-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.shape-card.flipped .shape-card-inner,
+.shape-card.solved .shape-card-inner {
+    transform: rotateY(180deg);
+}
+
+.shape-card.solved {
+    opacity: 0.8;
+}
+
+.shape-card-front,
+.shape-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shape-card-front {
+    background-color: #bbdefb;
+    color: #3f51b5;
+    font-size: 2rem;
+}
+
+.shape-card-back {
+    transform: rotateY(180deg);
+}
+
+.shape-card-back.circle {
+    clip-path: circle(40% at 50% 50%);
+}
+
+.shape-card-back.square {
+    clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%);
+}
+
+.shape-card-back.triangle {
+    clip-path: polygon(50% 20%, 80% 80%, 20% 80%);
+}
+
+.shape-card-back.star {
+    clip-path: polygon(50% 20%, 61% 38%, 80% 38%, 68% 55%, 80% 72%, 61% 72%, 50% 90%, 39% 72%, 20% 72%, 32% 55%, 20% 38%, 39% 38%);
+}
+
+.shape-card-back.heart {
+    clip-path: path('M40 15 C30 5, 10 5, 10 20 C10 35, 40 50, 40 50 C40 50, 70 35, 70 20 C70 5, 50 5, 40 15');
+}
+
+.shape-card-back.diamond {
+    clip-path: polygon(50% 20%, 80% 50%, 50% 80%, 20% 50%);
+}
+
+.shape-card-back.pentagon {
+    clip-path: polygon(50% 20%, 80% 40%, 70% 80%, 30% 80%, 20% 40%);
+}
+
+.shape-card-back.hexagon {
+    clip-path: polygon(50% 20%, 80% 35%, 80% 65%, 50% 80%, 20% 65%, 20% 35%);
+}
+
+.shape-card-back.octagon {
+    clip-path: polygon(30% 10%, 70% 10%, 90% 30%, 90% 70%, 70% 90%, 30% 90%, 10% 70%, 10% 30%);
+}
+
+.shape-card-back.cross {
+    clip-path: polygon(40% 10%, 60% 10%, 60% 40%, 90% 40%, 90% 60%, 60% 60%, 60% 90%, 40% 90%, 40% 60%, 10% 60%, 10% 40%, 40% 40%);
+}
+
+.shape-card-back.arrow {
+    clip-path: polygon(20% 50%, 50% 20%, 50% 40%, 80% 40%, 80% 60%, 50% 60%, 50% 80%);
+}
+
+.shape-card-back.moon {
+    clip-path: circle(30% at 70% 50%);
+}
+
+.shape-card-back.cloud {
+    clip-path: path('M20 30 C10 20, 30 10, 40 20 C50 10, 70 10, 80 20 C90 30, 80 50, 70 50 C60 60, 40 60, 30 50 C20 50, 10 40, 20 30');
+}
+
+.shape-card-back.sun {
+    clip-path: polygon(50% 20%, 60% 30%, 80% 20%, 70% 40%, 90% 50%, 70% 60%, 80% 80%, 60% 70%, 50% 90%, 40% 70%, 20% 80%, 30% 60%, 10% 50%, 30% 40%, 20% 20%, 40% 30%);
+}
+
+.shape-card-back.tree {
+    clip-path: polygon(50% 10%, 70% 30%, 60% 40%, 80% 60%, 60% 80%, 40% 80%, 20% 60%, 40% 40%, 30% 30%);
+}
+
+.shape-card-back.flower {
+    clip-path: polygon(50% 20%, 60% 30%, 80% 30%, 70% 40%, 80% 50%, 70% 60%, 80% 70%, 60% 70%, 50% 80%, 40% 70%, 20% 70%, 30% 60%, 20% 50%, 30% 40%, 20% 30%, 40% 30%);
+}
+
+.shape-card-back.wave {
+    clip-path: path('M10 50 C20 30, 40 30, 50 50 C60 70, 80 70, 90 50 C100 30, 80 30, 70 50 C60 70, 40 70, 30 50 C20 30, 0 30, 10 50');
+}
+
+.shape-card-back.spiral {
+    clip-path: path('M50 20 C60 20, 70 30, 70 40 C70 50, 60 60, 50 60 C40 60, 30 50, 30 40 C30 30, 40 20, 50 20 C55 20, 60 25, 60 30 C60 35, 55 40, 50 40 C45 40, 40 35, 40 30 C40 25, 45 20, 50 20');
+}
+
+.game-over {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-over h3 {
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.game-over p {
+    margin: 10px 0;
+}
+
+.xp-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.play-again-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.play-again-button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+.multiplayer-invite {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.multiplayer-invite p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.multiplayer-invite p:last-child {
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.blurred {
+    filter: blur(16px);
+    position: relative;
+}
+
+.unlock-blur-button {
+    display: block;
+    margin: 10px auto;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.unlock-blur-button:hover {
+    background-color: #1976d2;
+    transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+    .shape-card {
+        height: 8ch;
+        width: auto;
+        perspective: 1000px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 900px) {
+    .shape-multiplayer-container {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 15px;
+    }
+
+    .shape-grid.grid-2x2,
+    .shape-grid.grid-3x2,
+    .shape-grid.grid-4x4,
+    .shape-grid.grid-5x4 {
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    .shape-grid.grid-6x6 {
+        grid-template-columns: repeat(6, 50px);
+    }
+
+    .shape-card {
+        width: 80px;
+        height: 80px;
+    }
+
+    .shape-card.grid-6x6 {
+        width: 50px;
+        height: 50px;
+    }
+
+    .shape-card-front,
+    .shape-card-back {
+        font-size: 1.5rem;
+    }
+}

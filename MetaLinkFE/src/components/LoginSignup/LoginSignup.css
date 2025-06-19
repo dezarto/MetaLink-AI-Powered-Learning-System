@@ -1,0 +1,200 @@
+.loginpage {
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #ff9966, #ff5e62);
+    cursor: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 90%;
+    margin-top: 75px;
+    background-color: #fff;
+    padding: 20px;
+    padding-bottom: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-title {
+    color: rgba(255, 166, 0, 0.705);
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.title-underline {
+    width: 50px;
+    height: 3px;
+    background-color: rgba(255, 166, 0, 0.705);
+    border-radius: 9px;
+}
+
+.form-fields {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    max-width: 480px;
+    height: 60px;
+    background: rgb(255, 218, 150);
+    border-radius: 6px;
+    padding: 0 15px;
+    position: relative;
+}
+
+.form-input img {
+    margin-right: 15px;
+    width: 25px;
+    height: 24px;
+}
+
+.form-input input {
+    flex: 1;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 16px;
+}
+
+.password-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #797979;
+    transition: color 0.3s;
+}
+
+.password-toggle:hover {
+    color: rgb(255, 140, 0);
+}
+
+.forgot-password-link {
+    padding-left: 8%;
+    margin-top: 10px;
+    color: #797979;
+    font-size: 16px;
+}
+
+.forgot-password-link span {
+    cursor: pointer;
+}
+
+.forgot-password-link span:hover {
+    color: rgb(255, 218, 150);
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: grid;
+    gap: 15px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 480px;
+}
+
+.form-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    background-color: rgb(255, 166, 0);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+.form-button:hover {
+    background-color: rgb(255, 140, 0);
+}
+
+.form-button.gray {
+    background-color: #fafafa;
+    color: #797979;
+}
+
+.user-agreement {
+    padding-left: 8%;
+    margin-top: 10px;
+    color: #797979;
+    font-size: 16px;
+}
+
+.user-agreement input {
+    cursor: pointer;
+}
+
+.user-agreement label {
+    color: #797979;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.user-agreement label:hover {
+    color: rgb(255, 140, 0);
+}
+
+.form-error {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 0.875rem;
+    width: 100%;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}

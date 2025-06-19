@@ -1,0 +1,239 @@
+.settings-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.settings-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.settings-group {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.settings-group h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.setting-item {
+  margin-bottom: 15px;
+}
+
+.setting-item label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.setting-item input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.setting-item select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.change-password-button {
+  background-color: rgb(255, 181, 43);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.change-password-button:hover {
+  background-color: rgb(211, 150, 37);
+}
+
+.delete-account-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  /* Normal durumda pointer cursor */
+  opacity: 1;
+  /* Normal durumda tam opaklık */
+}
+
+.delete-account-button:hover {
+  background-color: #ff0019;
+}
+
+.delete-account-button:disabled {
+  background-color: #f8d7da;
+  /* Soluk kırmızı arka plan */
+  color: #6c757d;
+  /* Soluk gri yazı rengi */
+  cursor: not-allowed;
+  /* Tıklanamaz işaretçi */
+  opacity: 0.65;
+  /* Opaklık düşük */
+}
+
+.delete-account-button:disabled:hover {
+  background-color: #f8d7da;
+  /* Hover durumu disabled buton için aynı renk */
+}
+
+.change-password-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.change-password-modal {
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: modalFadeIn 0.3s ease-in-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.change-password-modal h2 {
+  color: #ff9966;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.change-password-modal p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.change-password-input-container {
+  margin-bottom: 25px;
+}
+
+.change-password-input {
+  width: 80%;
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  letter-spacing: 4px;
+  font-weight: bold;
+  transition: border-color 0.3s;
+  margin-bottom: 15px;
+}
+
+.change-password-input:focus {
+  outline: none;
+  border-color: #ff9966;
+  box-shadow: 0 0 5px rgba(255, 153, 102, 0.5);
+}
+
+.change-password-error {
+  color: #e53935;
+  margin-top: 10px;
+  font-size: 14px;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.change-password-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.change-password-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.change-password-cancel {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.change-password-cancel:hover {
+  background-color: #e0e0e0;
+}
+
+.change-password-submit {
+  background-color: #ff9966;
+  color: white;
+}
+
+.change-password-submit:hover {
+  background-color: #ff8533;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 153, 102, 0.3);
+}
+
+@media screen and (max-width: 480px) {
+  .change-password-modal {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .change-password-button {
+    min-width: 100px;
+    padding: 10px 15px;
+  }
+}

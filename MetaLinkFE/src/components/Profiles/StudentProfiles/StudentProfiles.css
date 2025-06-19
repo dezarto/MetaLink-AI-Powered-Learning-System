@@ -1,0 +1,1162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.student-profile-all {
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 218, 150));
+}
+
+.student-profile-container {
+  margin-top: 70px;
+  display: flex;
+  min-height: calc(100vh - 70px);
+  font-family: 'Roboto', Arial, sans-serif;
+  overflow: hidden;
+}
+
+.student-profile-sidebar {
+  width: 300px;
+  background-color: rgba(252, 199, 102, 0.808);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: none;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.student-profile-sidebar.collapsed {
+  width: 80px;
+  padding: 20px 10px;
+}
+
+.student-profile-toggle-sidebar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10;
+  color: #2c3e50;
+}
+
+.student-profile-sidebar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border: 3px solid white;
+  transition: width 0.3s ease, height 0.3s ease, margin-top 0.3s ease;
+}
+
+.student-profile-sidebar.collapsed img {
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.student-profile-menu-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.student-profile-menu-buttons button {
+  padding: 12px;
+  border: none;
+  background-color: rgb(255, 189, 68);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.student-profile-sidebar.collapsed .student-profile-menu-buttons button {
+  padding: 12px;
+  justify-content: center;
+  font-size: 0;
+}
+
+.student-profile-sidebar.collapsed .student-profile-menu-buttons button::before {
+  content: '';
+  font-size: 20px;
+}
+
+.student-profile-menu-buttons button:nth-child(1)::before {
+  content: '👤';
+}
+
+.student-profile-menu-buttons button:nth-child(2)::before {
+  content: '👥';
+}
+
+.student-profile-menu-buttons button:nth-child(3)::before {
+  content: '💬';
+}
+
+.student-profile-menu-buttons button:nth-child(4)::before {
+  content: '📊';
+}
+
+.student-profile-menu-buttons button:nth-child(5)::before {
+  content: '⚙️';
+}
+
+.student-profile-menu-buttons button:hover {
+  background-color: rgba(0, 0, 0, 0.808);
+}
+
+.student-profile-menu-buttons button.active {
+  background-color: rgba(199, 129, 0, 0.808);
+  font-weight: bold;
+}
+
+.student-profile-content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+}
+
+.student-profile-header-section {
+  background-color: rgba(252, 199, 102, 0.808);
+  color: white;
+  padding: 20px;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.student-profile-header-section h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.student-profile-user-id,
+.student-profile-level {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.student-profile-main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f7fa;
+  overflow-y: auto;
+  display: flex;
+}
+
+.student-profile-info-section {
+  width: 100%;
+}
+
+.student-profile-info-section h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid rgba(252, 199, 102, 0.808);
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.student-profile-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.student-profile-info-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.student-profile-info-label {
+  font-weight: bold;
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.student-profile-info-value {
+  color: #34495e;
+}
+
+.student-profile-friends-full {
+  display: flex;
+}
+
+.student-profile-friends-section {
+  width: 100%;
+}
+
+.student-profile-friends-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.student-profile-friends-header h2 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.student-profile-add-friend-btn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.student-profile-add-friend-btn:hover {
+  background-color: #27ae60;
+}
+
+.student-profile-add-friend-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.student-profile-sent-requests,
+.student-profile-pending-requests,
+.student-profile-blocked-users {
+  margin-bottom: 30px;
+}
+
+.student-profile-sent-requests h3,
+.student-profile-pending-requests h3,
+.student-profile-friends-list h3,
+.student-profile-blocked-users h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.student-profile-friends-list {
+  width: 100%;
+  margin: 5px;
+}
+
+.student-profile-friend-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.student-profile-friend-info h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.student-profile-friend-info p {
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+.student-profile-friend-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.student-profile-accept-btn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.student-profile-accept-btn:hover {
+  background-color: #27ae60;
+}
+
+.student-profile-cancel-btn {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.student-profile-cancel-btn:hover {
+  background-color: #d35400;
+}
+
+.student-profile-block-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.student-profile-block-btn:hover {
+  background-color: #c0392b;
+}
+
+.student-profile-unblock-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.student-profile-unblock-btn:hover {
+  background-color: #2980b9;
+}
+
+.student-profile-remove-friend-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.student-profile-remove-friend-btn:hover {
+  background-color: #c0392b;
+}
+
+.student-profile-accept-btn:disabled,
+.student-profile-cancel-btn:disabled,
+.student-profile-block-btn:disabled,
+.student-profile-unblock-btn:disabled,
+.student-profile-remove-friend-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.student-profile-no-friends {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+.student-profile-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.student-profile-add-friend-popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.student-profile-add-friend-popup h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.student-profile-add-friend-popup input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.student-profile-add-friend-popup input:disabled {
+  background-color: #f0f0f0;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.student-profile-popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.student-profile-popup-buttons button:first-child {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.student-profile-popup-buttons button:first-child:hover {
+  background-color: #27ae60;
+}
+
+.student-profile-popup-buttons button:last-child {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.student-profile-popup-buttons button:last-child:hover {
+  background-color: #7f8c8d;
+}
+
+.student-profile-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+.student-profile-welcome-section {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.student-profile-welcome-section h2 {
+  color: #2c3e50;
+}
+
+.student-profile-welcome-section p {
+  color: #7f8c8d;
+  font-size: 18px;
+}
+
+.student-profile-stats-section {
+  width: 100%;
+}
+
+.student-profile-settings-section {
+  width: 100%;
+}
+
+.student-profile-stats-section h2,
+.student-profile-settings-section h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid rgba(252, 199, 102, 0.808);
+  padding-bottom: 10px;
+}
+
+.avatar-selection-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.avatar-selection-description {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.avatar-selection-main {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.avatar-selection-list {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.avatar-option {
+  background-color: #f5f7fa;
+  padding: 12px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.avatar-option:hover {
+  background-color: #e8ecf2;
+}
+
+.avatar-option.selected {
+  border-color: rgba(252, 199, 102, 0.808);
+  background-color: rgba(252, 199, 102, 0.1);
+}
+
+.avatar-option.locked {
+  opacity: 0.7;
+  position: relative;
+}
+
+.avatar-option-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar-name {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.avatar-level {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.lock-icon {
+  color: #e74c3c;
+}
+
+.avatar-preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: #f5f7fa;
+  border-radius: 8px;
+}
+
+.avatar-preview-image {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border: 3px solid rgba(252, 199, 102, 0.808);
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.avatar-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-preview-info {
+  text-align: center;
+  width: 100%;
+}
+
+.avatar-preview-info h4 {
+  margin: 0;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.avatar-preview-info p {
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+.avatar-locked-message {
+  color: #e74c3c !important;
+  font-weight: bold;
+}
+
+.avatar-available-message {
+  color: #2ecc71 !important;
+  font-weight: bold;
+}
+
+.avatar-save-button {
+  background-color: rgba(252, 199, 102, 0.808);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.avatar-save-button:hover {
+  background-color: rgba(199, 129, 0, 0.808);
+}
+
+.avatar-save-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.voice-selection-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.voice-selection-description {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.voice-selection-main {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.voice-selection-list {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.voice-option {
+  background-color: #f5f7fa;
+  padding: 12px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.voice-option:hover {
+  background-color: #e8ecf2;
+}
+
+.voice-option.selected {
+  border-color: rgba(252, 199, 102, 0.808);
+  background-color: rgba(252, 199, 102, 0.1);
+}
+
+.voice-option.locked {
+  opacity: 0.7;
+  position: relative;
+}
+
+.voice-option-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.voice-name {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.voice-description {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.voice-preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background-color: #f5f7fa;
+  border-radius: 8px;
+}
+
+.voice-preview-info {
+  text-align: center;
+  width: 100%;
+}
+
+.voice-preview-info h4 {
+  margin: 0;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.voice-preview-info p {
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+.voice-preview-image-info {
+  margin: auto;
+}
+
+.voice-locked-message {
+  color: #e74c3c !important;
+  font-weight: bold;
+}
+
+.voice-available-message {
+  color: #2ecc71 !important;
+  font-weight: bold;
+}
+
+.voice-save-button {
+  background-color: rgba(252, 199, 102, 0.808);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.voice-save-button:hover {
+  background-color: rgba(199, 129, 0, 0.808);
+}
+
+.voice-save-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.student-profile-friend-full {
+  display: flex;
+}
+
+.student-profile-messages-section {
+  width: 100%;
+}
+
+.student-profile-messages-section h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid rgba(252, 199, 102, 0.808);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.student-profile-chat-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  max-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 5px;
+}
+
+.student-profile-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.student-profile-chat-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.student-profile-chat-header button {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.student-profile-chat-header button:hover {
+  background-color: #7f8c8d;
+}
+
+.student-profile-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f5f7fa;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.student-profile-chat-message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+.student-profile-chat-message.sent {
+  background-color: rgba(252, 199, 102, 0.808);
+  color: white;
+  margin-left: auto;
+}
+
+.student-profile-chat-message.received {
+  background-color: #e8ecf2;
+  color: #2c3e50;
+  margin-right: auto;
+}
+
+.student-profile-chat-message p {
+  margin: 0;
+}
+
+.student-profile-chat-message small {
+  font-size: 12px;
+  color: #7f8c8d;
+  display: block;
+  margin-top: 5px;
+}
+
+.student-profile-chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.student-profile-chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.student-profile-chat-input button {
+  background-color: rgba(252, 199, 102, 0.808);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.student-profile-chat-input button:hover {
+  background-color: rgba(199, 129, 0, 0.808);
+}
+
+.student-profile-message-btn {
+  background-color: #ff9500;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.student-profile-message-btn:hover {
+  background-color: #d87e00;
+}
+
+.student-profile-message-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .student-profile-container {
+    height: auto;
+  }
+
+  .student-profile-sidebar {
+    width: 80px;
+    padding: 20px 10px;
+  }
+
+  .student-profile-sidebar img {
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+  }
+
+  .student-profile-menu-buttons button {
+    padding: 12px;
+    justify-content: center;
+    font-size: 0;
+  }
+
+  .student-profile-menu-buttons button::before {
+    font-size: 20px;
+  }
+
+  .student-profile-header-section {
+    height: auto;
+    min-height: 100px;
+    padding: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .student-profile-header-section h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .student-profile-user-id,
+  .student-profile-level {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .avatar-selection-main,
+  .voice-selection-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .avatar-selection-list,
+  .voice-selection-list {
+    max-width: 100%;
+  }
+
+  .student-profile-friend-card {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .student-profile-friend-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .student-profile-add-friend-popup {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-profile-sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .student-profile-sidebar.collapsed {
+    width: 100%;
+  }
+
+  .student-profile-sidebar img {
+    display: none;
+  }
+
+  .student-profile-menu-buttons {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .student-profile-menu-buttons button {
+    flex: 1;
+    padding: 10px 5px;
+    font-size: 0;
+    text-align: center;
+  }
+
+  .student-profile-toggle-sidebar {
+    display: none;
+  }
+
+  .student-profile-header-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .student-profile-header-section h1 {
+    font-size: 20px;
+  }
+
+  .student-profile-user-id,
+  .student-profile-level {
+    font-size: 12px;
+  }
+
+  .student-profile-add-friend-btn,
+  .student-profile-accept-btn,
+  .student-profile-cancel-btn,
+  .student-profile-block-btn,
+  .student-profile-unblock-btn,
+  .student-profile-remove-friend-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .student-profile-popup-buttons button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+.student-profile-stats-section {
+  padding: 20px;
+}
+
+.student-profile-stats-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.student-profile-stats-section h5 {
+  margin: 15px 20px 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+.student-profile-stats-section .statistics-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.student-profile-stats-section .statistics-card h4 {
+  padding: 15px 20px;
+  margin: 0;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #eee;
+  font-size: 16px;
+  color: #444;
+}
+
+.student-profile-stats-section .chart-container {
+  padding: 15px;
+  min-height: 300px;
+  position: relative;
+}
+
+.student-profile-stats-section .statistics-list {
+  margin: 0;
+  padding: 15px;
+}
+
+.student-profile-stats-section .statistic-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.student-profile-stats-section .statistic-item:last-child {
+  border-bottom: none;
+}
+
+.student-profile-stats-section .statistic-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.student-profile-stats-section .statistic-value {
+  color: #666;
+}
+
+.student-profile-stats-section .statistic-message {
+  padding: 15px;
+  color: #ff4444;
+  font-weight: bold;
+}
+
+.chart-lesson-all {
+  display: flex;
+  flex-direction: row;
+}
+
+.chart-lesson {
+  width: 50%;
+}
+
+.chart-sub-lesson {
+  width: 50%;
+}
+
+@media (max-width: 800px) {
+  .chart-lesson-all {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chart-lesson {
+    width: 100%;
+  }
+
+  .chart-sub-lesson {
+    width: 100%;
+  }
+}
+
+.loading-text {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.student-profile-hamster-loading {
+  background-color: rgb(255, 255, 255);
+}

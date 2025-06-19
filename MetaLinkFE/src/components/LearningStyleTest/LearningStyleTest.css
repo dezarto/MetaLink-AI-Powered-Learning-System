@@ -1,0 +1,344 @@
+.lst-learning-overflow {
+  overflow: auto;
+  width: 100%;
+  height: 100vh;
+}
+
+.lst-learning-style-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(255, 218, 150);
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.lst-loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  color: #333;
+}
+
+.lst-test-header {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lst-test-header h1 {
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+.lst-test-description {
+  margin-bottom: 0;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.lst-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lst-section-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.lst-progress-indicator {
+  display: flex;
+  gap: 10px;
+}
+
+.lst-progress-indicator span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+}
+
+.lst-progress-indicator span.lst-active {
+  background-color: rgba(255, 166, 0, 0.705);
+  color: white;
+}
+
+.lst-questions-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lst-question-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.lst-question-item:last-child {
+  border-bottom: none;
+}
+
+.lst-question-number {
+  flex: 0 0 30px;
+  font-weight: bold;
+  color: rgba(255, 166, 0, 0.705);
+  text-align: center;
+}
+
+.lst-question-text {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.lst-checkbox-container {
+  flex: 0 0 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.lst-custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(255, 166, 0, 0.705);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.lst-custom-checkbox:hover {
+  background-color: rgba(255, 166, 0, 0.1);
+}
+
+.lst-custom-checkbox.lst-checked {
+  background-color: rgba(255, 166, 0, 0.705);
+}
+
+.lst-custom-checkbox.lst-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+}
+
+.lst-checkmark {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.lst-navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.lst-nav-button {
+  background-color: rgba(255, 166, 0, 0.705);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.lst-nav-button:hover:not(:disabled) {
+  background-color: rgba(255, 140, 0, 0.8);
+}
+
+.lst-nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+.lst-prev-button {
+  margin-right: auto;
+}
+
+.lst-next-button {
+  margin-left: auto;
+}
+
+.lst-submit-button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-left: auto;
+  width: 200px;
+}
+
+.lst-submit-button:hover:not(:disabled) {
+  background-color: #27ae60;
+}
+
+.lst-submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+.lst-score-summary {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+}
+
+.lst-score-item {
+  text-align: center;
+}
+
+.lst-score-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.lst-score-value {
+  font-size: 18px;
+  color: rgba(255, 166, 0, 0.705);
+  font-weight: bold;
+}
+
+.lst-new-question-label {
+  display: inline-block;
+  margin-left: 8px;
+  color: #0084ff;
+  font-weight: bold;
+  font-size: 0.85em;
+}
+
+.lst-child-perspective-warning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(255, 218, 150);
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.lst-child-perspective-warning h2 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.lst-child-perspective-warning p {
+  color: #555;
+  font-size: 16px;
+  max-width: 600px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.lst-exit-perspective-button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.lst-exit-perspective-button:hover {
+  background-color: #d9363e;
+}
+
+@media (max-width: 768px) {
+  .lst-section-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lst-question-item {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .lst-question-number {
+    margin-bottom: 0;
+    flex: 0 0 25px;
+  }
+
+  .lst-question-text {
+    flex: 1;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  .lst-checkbox-container {
+    align-self: center;
+    margin-top: 0;
+    flex: 0 0 30px;
+  }
+
+  .lst-navigation-buttons {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .lst-nav-button,
+  .lst-submit-button,
+  .lst-exit-perspective-button {
+    width: 100%;
+  }
+
+  .lst-score-summary {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lst-child-perspective-warning h2 {
+    font-size: 24px;
+  }
+
+  .lst-child-perspective-warning p {
+    font-size: 14px;
+  }
+}

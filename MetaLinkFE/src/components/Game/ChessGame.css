@@ -1,0 +1,273 @@
+.chess-container {
+    width: 100%;
+    padding: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.chess-back-button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-bottom: 10px;
+}
+
+.chess-back-button:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+.chess-game-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.chess-instruction {
+    font-size: 1.1rem;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin: 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.chess-instruction.your-turn {
+    background-color: #4caf50;
+}
+
+.chess-instruction.your-turn:hover {
+    background-color: #388e3c;
+}
+
+.chess-instruction.not-your-turn {
+    background-color: #ff9800;
+}
+
+.chess-instruction.not-your-turn:hover {
+    background-color: #f57c00;
+}
+
+.chess-game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chess-board-container {
+    margin: auto;
+}
+
+.chess-grid-labels {
+    position: relative;
+}
+
+.chess-row-labels {
+    position: absolute;
+    left: -30px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 5px;
+}
+
+.chess-column-labels {
+    position: absolute;
+    top: -30px;
+    display: flex;
+    gap: 2px;
+}
+
+.chess-label {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    margin-right: 2.4ch;
+}
+
+.chess-label-row {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 2.4ch;
+}
+
+.chess-game-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 2px;
+}
+
+.chess-cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chess-cell.chess-light {
+    background-color: #f0d9b5;
+}
+
+.chess-cell.chess-dark {
+    background-color: #b58863;
+}
+
+.chess-cell.chess-selected {
+    background-color: #ffeb3b !important;
+}
+
+.chess-cell.chess-valid-move {
+    background-color: #4caf50 !important;
+}
+
+.chess-cell.chess-valid-move:hover {
+    background-color: #388e3c !important;
+}
+
+.chess-move-history {
+    flex: 1;
+    max-width: 200px;
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin: 0px auto;
+}
+
+.chess-move-history h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.move-history-content {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.chess-waiting-message,
+.chess-win-message {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chess-win-message h3 {
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.chess-win-message h3.chess-lost {
+    color: #ff4444;
+}
+
+.chess-win-message h3.chess-draw {
+    color: #2196f3;
+}
+
+.chess-win-message p {
+    margin: 10px 0;
+}
+
+.chess-play-again-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.chess-play-again-button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+.chess-error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chess-system-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .chess-game-container {
+        flex-direction: column;
+    }
+
+    .chess-game-grid {
+        grid-template-columns: repeat(8, 40px);
+        grid-template-rows: repeat(8, 40px);
+        margin: 30px 0 0 30px;
+    }
+
+    .chess-cell {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .chess-row-labels {
+        left: -25px;
+        top: 30px;
+    }
+
+    .chess-column-labels {
+        top: -25px;
+        left: 30px;
+    }
+
+    .chess-label {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9rem;
+    }
+
+    .chess-move-history {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}

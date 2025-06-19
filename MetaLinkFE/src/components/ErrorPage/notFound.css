@@ -1,0 +1,242 @@
+.error-all {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.nf-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff8f2;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.nf-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 4rem;
+  width: 80%;
+  max-width: 1200px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(255, 107, 0, 0.15);
+  background-color: #fffaf5;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.nf-text-content {
+  text-align: left;
+}
+
+.nf-title {
+  font-size: 9rem;
+  margin: 0;
+  color: #ff6b00;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.nf-text {
+  font-size: 3.5rem;
+  color: #333;
+  margin: 0.5rem 0 0.2rem 0;
+  font-weight: 600;
+}
+
+.nf-subtext {
+  font-size: 1.8rem;
+  color: #666;
+  margin: 0.5rem 0 0;
+}
+
+.nf-robot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nf-head {
+  width: 140px;
+  height: 140px;
+  background-color: #ff6b00;
+  border-radius: 30px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.nf-eyes {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 36px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nf-eye {
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.nf-eye::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #333;
+  border-radius: 50%;
+  top: 8px;
+  left: 8px;
+}
+
+.nf-mouth {
+  width: 50px;
+  height: 10px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 30px auto 0;
+}
+
+.nf-body {
+  width: 100px;
+  height: 120px;
+  background-color: #ff6b00;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nf-button {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.nf-back-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff6b00;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 0 20px 20px;
+  transition: background-color 0.3s;
+}
+
+.nf-back-button:hover {
+  background-color: #e65c00;
+}
+
+@media (max-width: 1024px) {
+  .nf-content {
+    width: 90%;
+    padding: 3rem;
+    gap: 40px;
+    padding-bottom: 70px;
+  }
+
+  .nf-title {
+    font-size: 7rem;
+  }
+
+  .nf-text {
+    font-size: 2.8rem;
+  }
+
+  .nf-subtext {
+    font-size: 1.5rem;
+  }
+
+  .nf-head {
+    width: 120px;
+    height: 120px;
+  }
+
+  .nf-body {
+    width: 90px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nf-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem;
+    gap: 30px;
+    width: 85%;
+    padding-bottom: 65px;
+  }
+
+  .nf-text-content {
+    text-align: center;
+  }
+
+  .nf-title {
+    font-size: 6rem;
+  }
+
+  .nf-text {
+    font-size: 2.5rem;
+  }
+
+  .nf-subtext {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nf-content {
+    padding: 2rem;
+    width: 90%;
+    padding-bottom: 60px;
+  }
+
+  .nf-title {
+    font-size: 5rem;
+  }
+
+  .nf-text {
+    font-size: 2rem;
+  }
+
+  .nf-head {
+    width: 100px;
+    height: 100px;
+  }
+
+  .nf-body {
+    width: 80px;
+    height: 90px;
+  }
+
+  .nf-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nf-back-button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}

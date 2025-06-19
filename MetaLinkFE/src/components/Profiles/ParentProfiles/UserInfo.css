@@ -1,0 +1,81 @@
+.user-info-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.user-info-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.parent-form-group {
+  margin-bottom: 15px;
+}
+
+.parent-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.parent-form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.user-info-save-button {
+  background-color: rgb(255, 181, 43);
+  ;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.user-info-save-button:hover {
+  background-color: rgb(212, 151, 37);
+  ;
+}
+
+.parent-form-group input:focus {
+  border-color: rgb(255, 181, 43);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 181, 43, 0.2);
+}
+
+.password-group input {
+  padding-right: 40px;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.toggle-pin-visibility {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-pin-visibility:hover {
+  color: #333;
+}
+
+.toggle-pin-visibility svg {
+  pointer-events: none;
+}

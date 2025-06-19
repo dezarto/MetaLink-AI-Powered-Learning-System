@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6955E6AB-FDE1-4D32-AEF9-8044D795065C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infastracutre", "Infastracutre", "{BD132E7D-D4E8-484C-AB19-DD5E60C1BEB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{2C70362E-090E-4B0B-8C53-705BDC1C0422}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaLink.Application", "MetaLink.Application\MetaLink.Application.csproj", "{E531C960-0DE8-4481-83AB-FF0CA3BD1CD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaLink.Domain", "MetaLink.Domain\MetaLink.Domain.csproj", "{4BB4E9BD-550E-486B-865B-0AEDD98DDFEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaLink.Persistence", "MetaLink.Infrastructure\MetaLink.Persistence.csproj", "{A17B934A-3457-45E8-82CF-4C0C07EA9BEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetaLink.API", "MetaLink.API\MetaLink.API.csproj", "{45C1E763-FB7D-4E22-BA54-FB252EDA6A00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E531C960-0DE8-4481-83AB-FF0CA3BD1CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E531C960-0DE8-4481-83AB-FF0CA3BD1CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E531C960-0DE8-4481-83AB-FF0CA3BD1CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E531C960-0DE8-4481-83AB-FF0CA3BD1CD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB4E9BD-550E-486B-865B-0AEDD98DDFEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB4E9BD-550E-486B-865B-0AEDD98DDFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB4E9BD-550E-486B-865B-0AEDD98DDFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB4E9BD-550E-486B-865B-0AEDD98DDFEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A17B934A-3457-45E8-82CF-4C0C07EA9BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17B934A-3457-45E8-82CF-4C0C07EA9BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17B934A-3457-45E8-82CF-4C0C07EA9BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17B934A-3457-45E8-82CF-4C0C07EA9BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C1E763-FB7D-4E22-BA54-FB252EDA6A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C1E763-FB7D-4E22-BA54-FB252EDA6A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C1E763-FB7D-4E22-BA54-FB252EDA6A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C1E763-FB7D-4E22-BA54-FB252EDA6A00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E531C960-0DE8-4481-83AB-FF0CA3BD1CD5} = {6955E6AB-FDE1-4D32-AEF9-8044D795065C}
+		{4BB4E9BD-550E-486B-865B-0AEDD98DDFEA} = {6955E6AB-FDE1-4D32-AEF9-8044D795065C}
+		{A17B934A-3457-45E8-82CF-4C0C07EA9BEF} = {BD132E7D-D4E8-484C-AB19-DD5E60C1BEB1}
+		{45C1E763-FB7D-4E22-BA54-FB252EDA6A00} = {2C70362E-090E-4B0B-8C53-705BDC1C0422}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C612D1E9-E316-4BBE-B16F-90E3A64F3CE6}
+	EndGlobalSection
+EndGlobal

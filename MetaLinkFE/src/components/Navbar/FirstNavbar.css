@@ -1,0 +1,200 @@
+.navheader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+  background: linear-gradient(135deg, #ff8a00 0%, #ff5722 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.navLogo {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.firstnavbar {
+    display: flex;
+    align-items: center;
+}
+
+.firstnavbar a,
+.firstnavbar button {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.firstnavbar a::before,
+.firstnavbar button::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.firstnavbar a:hover::before,
+.firstnavbar button:hover::before {
+    width: 100%;
+}
+
+.firstnavbar a.active::before,
+.firstnavbar button.active::before {
+    width: 100%;
+}
+
+.firstnavbar button {
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+
+
+.logged-in-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 30px;
+}
+
+.logged-in-section a,
+.logged-in-section button {
+    margin: 0;
+}
+
+.logged-in-section a::before,
+.logged-in-section button::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+    margin-top: -8px;
+}
+
+.study-area-link {
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.admin-panel-link {
+    padding: 8px 16px;
+    background-color: #ffffff33;
+    border: 1px solid #ff4242;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 900px) {
+    .navheader {
+        padding: 15px 5%;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 101;
+    }
+
+    .hamburger .bar.active:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger .bar.active:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger .bar.active:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .firstnavbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgb(255, 181, 43);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 80px 20px 30px;
+        transition: 0.5s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .firstnavbar.active {
+        right: 0;
+    }
+
+    .firstnavbar a,
+    .firstnavbar button {
+        margin: 15px 0;
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .logged-in-section {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .logged-in-section a,
+    .logged-in-section button {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .study-area-link,
+    .admin-panel-link {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navLogo {
+        font-size: 24px;
+    }
+
+    .firstnavbar {
+        width: 80%;
+    }
+}

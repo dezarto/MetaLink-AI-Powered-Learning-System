@@ -1,0 +1,219 @@
+.premium-roadmap-container {
+  overflow: auto;
+  width: 140%;
+}
+
+.premium-roadmap-svg {
+  width: 100%;
+  min-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.premium-roadmap-back-button {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.premium-roadmap-game-label {
+  text-anchor: middle;
+  font-size: 12px;
+  font-weight: bold;
+  fill: #1F2937;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.premium-roadmap-node-group {
+  transition: transform 0.2s ease;
+}
+
+.premium-roadmap-node-checkmark,
+.premium-roadmap-node-number,
+.premium-roadmap-node-arrow {
+  text-anchor: middle;
+  font-size: 18px;
+  font-weight: bold;
+  fill: white;
+}
+
+.premium-roadmap-node-number-double-digit {
+  font-size: 14px;
+}
+
+.premium-roadmap-node-title {
+  text-anchor: middle;
+  font-size: 12px;
+  font-weight: bold;
+  fill: #1F2937;
+}
+
+.premium-roadmap-node-hover-ring {
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-dasharray: 3 3;
+  opacity: 0.7;
+}
+
+.premium-roadmap-node-click-area {
+  fill: transparent;
+  cursor: pointer;
+}
+
+.premium-roadmap-node-details {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E5E7EB;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.premium-roadmap-node-details-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.premium-roadmap-node-details-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.premium-roadmap-node-details-icon.completed {
+  background-color: #16A34A;
+}
+
+.premium-roadmap-node-details-icon.active {
+  background-color: #9333EA;
+}
+
+.premium-roadmap-node-details-icon.future {
+  background-color: #6D28D9;
+}
+
+.premium-roadmap-node-details-title {
+  margin: 0;
+  font-size: 20px;
+  color: #1F2937;
+}
+
+.premium-roadmap-node-details-content {
+  margin: 0;
+  color: #4B5563;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.premium-roadmap-node-details-button {
+  margin-top: 16px;
+  background-color: #9333EA;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(147, 51, 234, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.premium-roadmap-node-details-button.game {
+  background-color: #3B82F6;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.premium-roadmap-node-details-button:hover {
+  background-color: #7E22CE;
+}
+
+.premium-roadmap-node-details-button.game:hover {
+  background-color: #1D4ED8;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.premium-roadmap-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.premium-roadmap-scroll-button {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.premium-roadmap-node-details {
+  position: relative;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E5E7EB;
+  animation: fadeIn 0.3s ease-out;
+  z-index: 10;
+  width: calc(100% - 40px);
+}
+
+.premium-roadmap-node-details-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.premium-roadmap-node-details-button {
+  background-color: #9333EA;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(147, 51, 234, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.premium-roadmap-node-details-button.test {
+  background-color: #16A34A;
+  box-shadow: 0 2px 4px rgba(22, 163, 74, 0.3);
+}
+
+.premium-roadmap-node-details-button.test:hover {
+  background-color: #15803D;
+}
+
+.premium-roadmap-node-details-button.game {
+  background-color: #3B82F6;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.premium-roadmap-node-details-button:hover {
+  background-color: #7E22CE;
+}
+
+.premium-roadmap-node-details-button.game:hover {
+  background-color: #1D4ED8;
+}

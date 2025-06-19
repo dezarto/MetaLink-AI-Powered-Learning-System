@@ -1,0 +1,625 @@
+.game-page {
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f7ff;
+  display: flex;
+  padding: 0 20px;
+  margin-top: 85px;
+  overflow: hidden;
+}
+
+.game-play-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.game-stats-section {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+}
+
+.player-stats {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.player-stats.opponent {
+  flex-direction: row-reverse;
+}
+
+.avatar-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.player-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  color: black;
+}
+
+.level-progress {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.level-bar {
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.level-fill {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.5s ease;
+}
+
+.player-stats.opponent .level-fill {
+  background-color: #f44336;
+  float: right;
+}
+
+.level-text {
+  font-size: 12px;
+  text-align: center;
+  color: #555;
+}
+
+.game-area-section {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-top: 0;
+  flex: 1;
+  min-height: 0;
+}
+
+.game-area {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: auto;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.game-controls {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.placeholder-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.placeholder-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.placeholder-buttons button {
+  padding: 8px 15px;
+  background-color: #ff9500;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.placeholder-buttons button:hover {
+  background-color: #d87e00;
+}
+
+.right-side-section {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  min-height: 0;
+}
+
+.friends-section,
+.chat-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.friends-section h3,
+.chat-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.friends-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.friend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.friend-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.friend-status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.friend-status.online {
+  background-color: #4caf50;
+}
+
+.friend-status.offline {
+  background-color: #9e9e9e;
+}
+
+.friend-name {
+  font-size: 14px;
+}
+
+.invite-button {
+  padding: 5px 10px;
+  background-color: #fca936;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.invite-button:hover {
+  background-color: #da922e;
+}
+
+.add-friend-button {
+  align-self: flex-end;
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.add-friend-button:hover {
+  background-color: #388e3c;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-right: 5px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+.message.user {
+  align-self: flex-end;
+}
+
+.message.opponent {
+  align-self: flex-start;
+}
+
+.message-content {
+  padding: 8px 12px;
+  border-radius: 15px;
+  background-color: #e0e0e0;
+  position: relative;
+}
+
+.message.user .message-content {
+  background-color: #f3cc91;
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.message.opponent .message-content {
+  background-color: #f5f5f5;
+  border-bottom-left-radius: 5px;
+}
+
+.message-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.message-time {
+  font-size: 10px;
+  color: #757575;
+  margin-top: 3px;
+  display: block;
+  text-align: right;
+}
+
+.message.user .message-time {
+  color: #e1f5fe;
+}
+
+.gamepage-chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.gamepage-chat-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  width: 100%;
+}
+
+.gamepage-chat-input button {
+  padding: 8px 15px;
+  background-color: #fca936;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 30%;
+}
+
+.gamepage-chat-input button:hover {
+  background-color: #da922e;
+}
+
+.game-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: #d32f2f;
+}
+
+.lobby-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.lobby-container h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.lobby-players {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.lobby-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.lobby-player .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.lobby-player .player-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.start-game-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.start-game-button:hover {
+  background-color: #388e3c;
+}
+
+.invite-notification {
+  background-color: #e3f2fd;
+  border: 1px solid #ff9500;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.invite-notification p {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+}
+
+.invite-notification button {
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.invite-notification button:first-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+.invite-notification button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.waiting-modal {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.waiting-modal h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.waiting-modal p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.waiting-modal button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.waiting-modal button:hover {
+  background-color: #388e3c;
+}
+
+.disconnect-modal {
+  background-color: #fff;
+  border: 2px solid #f44336;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.disconnect-modal h2 {
+  color: #f44336;
+  margin-bottom: 15px;
+}
+
+.disconnect-modal p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.invite-sent-modal h2 {
+  color: #ff9500;
+}
+
+.invite-declined-modal h2 {
+  color: #f44336;
+}
+
+.game-ended-modal h2 {
+  color: #4caf50;
+}
+
+.invite-expired-modal h2 {
+  color: #ff9800;
+}
+
+.message.system {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.message.system .message-content {
+  background-color: #f0f0f0;
+  color: #555;
+  font-style: italic;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.message.system .message-time {
+  color: #888;
+  font-size: 0.8em;
+}
+
+@media (max-width: 1200px) {
+  .right-side-section {
+    width: 28%;
+  }
+}
+
+@media (max-width: 992px) {
+  .game-play-container {
+    flex-direction: column;
+  }
+
+  .game-area-section {
+    width: 100%;
+  }
+
+  .friends-section,
+  .chat-section {
+    height: 45%;
+  }
+}
+
+@media (max-width: 837px) {
+  .game-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-side-section {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .friends-section {
+    width: 50%;
+  }
+
+  .chat-section {
+    width: 50%;
+  }
+
+  .invite-notification {
+    height: 46%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-area {
+    height: auto;
+    min-height: 350px;
+  }
+
+  .game-play-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-stats-section {
+    flex-direction: column;
+  }
+
+  .player-stats.opponent {
+    flex-direction: row-reverse;
+  }
+}
