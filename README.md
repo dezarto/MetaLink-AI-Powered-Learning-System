@@ -1,3 +1,45 @@
+## Medias
+[![Avatar Chat Video]](https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Kay%C4%B1t%202025-06-19%20170401.mp4)
+
+[![Memory Match Game Video]](https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Kay%C4%B1t%202025-06-19%20170806.mp4)
+
+[![Kahoot Quiz Game Video]](https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Kay%C4%B1t%202025-06-19%20171100.mp4)
+
+<table>
+  <tr>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20163857.png?raw=true" alt="image1" width="400" style="margin-right:10px;" /></td>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20164348.png?raw=true" alt="image2" width="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20164406.png?raw=true" alt="image3" width="400" style="margin-right:10px;" /></td>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20164421.png?raw=true" alt="image4" width="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20164514.png?raw=true" alt="image5" width="400" style="margin-right:10px;" /></td>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20165523.png?raw=true" alt="image6" width="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20165617.png?raw=true" alt="image7" width="400" style="margin-right:10px;" /></td>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20165734.png?raw=true" alt="image8" width="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20164614.png?raw=true" alt="image9" width="400" style="margin-right:10px;" /></td>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20164600.png?raw=true" alt="image10" width="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20164705.png?raw=true" alt="a1" width="400" style="margin-right:10px;" /></td>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20171211.png?raw=true" alt="a1" width="400" style="margin-right:10px;" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20171241.png?raw=true" alt="a1" width="400" style="margin-right:10px;" /></td>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20171250.png?raw=true" alt="a1" width="400" style="margin-right:10px;" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20164719.png?raw=true" alt="a1" width="400" style="margin-right:10px;" /></td>
+    <td><img src="https://github.com/dezarto/MetaLink-AI-Powered-Learning-System/blob/main/media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-06-19%20171527.png?raw=true" alt="a1" width="400" style="margin-right:10px;" /></td>
+  </tr>
+</table>
+
 [TR]
 # MetaLink-AI-Powered-Learning-System
 
